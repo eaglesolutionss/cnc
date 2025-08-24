@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle Solutions - Exterior & Interior CNC Works</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('assets/del2.jpeg') no-repeat center center;
+    background-size: 100% auto;   /* 👈 shrink the image width */
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 85vh;
+}
+
+        
+        .slide {
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide:not(.active) {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .material-card {
+            transition: all 0.3s ease;
+        }
+        
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-gold {
+            background: linear-gradient(45deg, #D4AF37, #F4E5C2);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-amber-50">
+    <!-- Navigation -->
+    <nav class="bg-amber-900 text-amber-50 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-drafting-compass text-2xl text-amber-200"></i>
+                <a href="#" class="text-xl font-bold">Eagle Solutions</a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link hover:text-amber-200">Home</a>
+                <a href="#about" class="nav-link hover:text-amber-200">About Us</a>
+                <a href="#services" class="nav-link hover:text-amber-200">Services</a>
+                <a href="#gallery" class="nav-link hover:text-amber-200">Gallery</a>
+                <a href="#contact" class="nav-link hover:text-amber-200">Contact</a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-amber-800 px-4 pb-4">
+            <a href="#home" class="block py-2 hover:text-amber-200">Home</a>
+            <a href="#about" class="block py-2 hover:text-amber-200">About Us</a>
+            <a href="#services" class="block py-2 hover:text-amber-200">Services</a>
+            <a href="#gallery" class="block py-2 hover:text-amber-200">Gallery</a>
+            <a href="#contact" class="block py-2 hover:text-amber-200">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center text-center text-white">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Smaller logo -->
+           
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">EXTERIOR & INTERIOR CNC WORKS</h1>
+            <p class="text-xl md:text-2xl mb-8">Transforming materials into masterpieces with CNC technology</p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#about" class="btn-gold text-amber-900 font-bold py-3 px-6 rounded-full">Know us</a>
+                <a href="#services" class="border-2 border-amber-200 text-amber-200 font-bold py-3 px-6 rounded-full hover:bg-amber-200 hover:text-amber-900 transition">Our Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="assets/about.png" 
+                         alt="CNC Machine at Work" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-amber-900 mb-6">About Eagle Solutions</h2>
+                    <p class="text-gray-700 mb-4">
+                    Eagle Solutions specializes in precision CNC cutting for interiors and exteriors, turning diverse materials into creative and durable designs.                    </p>
+                    <p class="text-gray-700 mb-6">
+                    With years of experience, we blend modern CNC technology and expert craftsmanship to deliver outstanding results for clients across Kerala and beyond, ensuring every project is executed with precision, creativity, and a commitment to excellence in both interior and exterior design.                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-amber-800 mb-3">Materials We Work With:</h3>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-amber-600 mr-2"></i>
+                                <span>Acrylic Foam Sheet</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-amber-600 mr-2"></i>
+                                <span>MDF</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-amber-600 mr-2"></i>
+                                <span>Wooden</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-amber-600 mr-2"></i>
+                                <span>PVC Sheet</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-amber-600 mr-2"></i>
+                                <span>Aluminium</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-amber-600 mr-2"></i>
+                                <span>WPC</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-amber-600 mr-2"></i>
+                                <span>ACP Panel Sheet</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-amber-600 mr-2"></i>
+                                <span>Multiwood</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn-gold inline-block text-amber-900 font-bold py-3 px-6 rounded-full">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slideshow Section -->
+   <section class="py-16 bg-amber-100 relative">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-amber-900 mb-12">Our Recent Works</h2>
+        
+        <div class="relative h-[70vh] w-[60%] mx-auto overflow-hidden rounded-xl shadow-lg bg-black">
+            <!-- Slides -->
+            <div class="slide active flex items-center justify-center h-full w-full">
+                <img src="assets/aura.jpg" 
+                     alt="CNC Work Sample 1" class="h-[110%] w-[150%] object-contain mx-auto">
+            </div>
+            <div class="slide active flex items-center justify-center h-full w-full">
+                <img src="assets/image12.jpg" 
+                     alt="CNC Work Sample 2" class="h-[123%] w-[300%] object-contain mx-auto">
+            </div>
+            <div class="slide flex items-center justify-center h-full w-full">
+                <img src="assets/image41.jpg" 
+                     alt="CNC Work Sample 3" class="h-[110%] w-[100%] object-contain mx-auto">
+            </div>
+            
+            <!-- Navigation arrows -->
+            <button id="prev-slide" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="next-slide" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Indicators -->
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition"></button>
+                <button class="slide-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-amber-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-amber-900 mb-12">Our Services</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-lg material-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-cut text-amber-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-amber-800">Precision CNC Cutting</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Our advanced CNC cutting services deliver precise, clean cuts for a variety of materials. Whether you need intricate patterns or large-scale production, we ensure accuracy down to the millimeter.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg material-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-vector-square text-amber-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-amber-800">2D & 3D Engraving</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Create stunning visual effects with our 2D and 3D engraving services. Perfect for signage, decorative elements, and personalized items with depth and texture.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg material-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-star text-amber-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-amber-800">Mirror & Lighting Creations</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        We design and frame stylish mirrors and craft innovative LED sensor lighting that brighten up your interiors with elegance and smart functionality.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg material-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-home text-amber-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-amber-800">Interior Decorations</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Transform your living or workspace with custom CNC-made interior decorations, wall panels, room dividers, and unique furniture pieces tailored to your style.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg material-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-shapes text-amber-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-amber-800">Gypsum Interiors with LED Lighting</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Upgrade your interiors with custom gypsum board works integrated with modern LED lighting, creating stylish ceilings and walls with a premium finish.
+                    </p>
+                </div>
+            
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg material-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-building text-amber-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-amber-800">Exterior Applications</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Durable and weather-resistant CNC solutions for exterior facades, signage, architectural elements, and outdoor decorations that stand the test of time.
+                    </p>
+                </div>
+            </div>
+
+                            
+            <h3 class="text-2xl font-bold text-center text-amber-900 mb-8">Featured Projects</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img src="assets/image1.jpg" 
+                         alt="Project 1" class="w-full aspect-[4/3] object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg text-amber-800">Christian Prayer unit</h4>
+                        <p class="text-gray-600">Decorative with LED backlighting</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img src="assets/image6.jpeg" 
+                         alt="Project 2" class="w-full aspect-[4/3] object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg text-amber-800">Decorative Wall Panel</h4>
+                        <p class="text-gray-600">3D wall Art</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img src="assets/download3.jpeg" 
+                         alt="Project 3" class="w-full aspect-[4/3] object-cover">
+                    <div class="p-4">
+                        <h4 class="font-semibold text-lg text-amber-800">Smart Mirrors with built-in LED</h4>
+                        <p class="text-gray-600">Light up your reflection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-amber-900 mb-12">Our Work Gallery</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/jesus10.jpg" 
+                         alt="Gallery Image 1" class="w-full aspect-[3/2] object-cover">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/image41.jpg" 
+                         alt="Gallery Image 2" class="w-full aspect-[3/2] object-cover">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/image7.jpeg" 
+                         alt="Gallery Image 3" class="w-full aspect-[3/2] object-cover">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/image9.jpeg" 
+                         alt="Gallery Image 4 " class="w-full aspect-[3/2] object-cover">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/jesus6.jpg" 
+                         alt="Gallery Image 5" class="w-full aspect-[3/2] object-cover">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/writing.jpg" 
+                         alt="Gallery Image 6"  class="w-full aspect-[3/2] object-cover">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/mirror1.jpeg" 
+                         alt="Gallery Image 7"  class="w-full aspect-[3/2] object-cover">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/mirror2.jpeg" 
+                         alt="Gallery Image 8" class="w-full aspect-[3/2] object-cover">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/gypsun.jpeg" 
+                         alt="Gallery Image 8" class="w-full aspect-[3/2] object-cover">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/mirror2.jpeg" 
+                         alt="Gallery Image 8" class="w-full aspect-[3/2] object-cover">
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button class="btn-gold text-amber-900 font-bold py-3 px-6 rounded-full">View More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fullscreen Gallery Modal -->
+    <div id="gallery-modal" class="modal fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
+        <div class="relative w-full h-full max-w-6xl mx-auto flex items-center">
+            <button id="close-modal" class="absolute top-4 right-4 text-white text-3xl z-10">
+                <i class="fas fa-times"></i>
+            </button>
+            <button id="prev-image" class="absolute left-4 text-white text-3xl z-10">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <img id="modal-image" src="" alt="" class="max-h-screen max-w-full mx-auto">
+            <button id="next-image" class="absolute right-4 text-white text-3xl z-10">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient-eagle fade-in up">
+            Contact Us
+        </h2>
+        
+        <div class="flex flex-col lg:flex-row gap-10">
+            
+            <!-- Left: Contact Info -->
+            <div class="lg:w-1/3 fade-in left">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Get in Touch</h3>
+                    
+                    <div class="space-y-5">
+                        <div class="flex items-start">
+                            <div class="text-amber-600 mt-1 mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Our Location</h4>
+                                <p class="text-gray-600">Shantinagar, Puthanchira, Kerala, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-amber-600 mt-1 mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Phone Number</h4>
+                                <a href="tel:+919249728160" class="text-gray-600 hover:text-amber-600 transition">+91 9249728160</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-amber-600 mt-1 mr-4">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">WhatsApp</h4>
+                                <a href="https://wa.me/919249728160" class="text-gray-600 hover:text-amber-600 transition">+91 9249728160</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-amber-600 mt-1 mr-4">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Instagram</h4>
+                                <a href="https://www.instagram.com/_eagle_solutions_?igsh=MTk4eWJvb2N2aHduaw==">@_eagle_solutions_</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex space-x-4">
+                        <a href="tel:+919249728160" class="bg-amber-100 text-amber-700 px-4 py-2 rounded-lg hover:bg-amber-200 transition flex items-center">
+                            <i class="fas fa-phone mr-2"></i> Call Now
+                        </a>
+                        <a href="https://wa.me/919249728160" class="bg-green-100 text-green-700 px-4 py-2 rounded-lg hover:bg-green-200 transition flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right: Map -->
+            <div class="lg:w-2/3 rounded-lg overflow-hidden shadow-lg fade-in up">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.656638060865!2d76.2602728!3d10.289225100000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081d70e75a48d3%3A0xd1d1f95893916bd6!2sEagle%20solutions!5e0!3m2!1sen!2sin!4v1755191274879!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="500" 
+                    style="border:0;" 
+                    allowfullscreen 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="w-full h-[500px]">
+                </iframe>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-950 text-amber-100 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-drafting-compass text-2xl text-amber-200"></i>
+                        <span class="text-xl font-bold">Eagle Solutions</span>
+                    </div>
+                    <p class="text-sm">Precision Cutting & Creative Designs</p>
+                </div>
+                
+                <div class="mb-6 md:mb-0">
+                    <h4 class="font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-amber-300 transition">About Us</a></li>
+                        <li><a href="#services" class="hover:text-amber-300 transition">Services</a></li>
+                        <li><a href="#gallery" class="hover:text-amber-300 transition">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-amber-300 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-3">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/919249728160" class="text-amber-200 hover:text-green-400 text-xl transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="text-amber-200 hover:text-pink-400 text-xl transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-amber-200 hover:text-blue-400 text-xl transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="https://maps.app.goo.gl/CgxvCZUejYrE1Wqh6" class="flex items-center text-sm hover:text-amber-300 transition">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>View on Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-amber-800 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2023 Eagle Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919249728160" class="fixed bottom-6 right-6 bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition z-40">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Slideshow Functionality
+        const slides = document.querySelectorAll('.slide');
+        const slideIndicators = document.querySelectorAll('.slide-indicator');
+        const prevSlideButton = document.getElementById('prev-slide');
+        const nextSlideButton = document.getElementById('next-slide');
+        
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slideIndicators.forEach(indicator => indicator.classList.remove('bg-white', 'bg-opacity-100'));
+            
+            slides[index].classList.add('active');
+            slideIndicators[index].classList.add('bg-white', 'bg-opacity-100');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        }
+        
+        function prevSlide() {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        }
+        
+        // Set up event listeners
+        nextSlideButton.addEventListener('click', nextSlide);
+        prevSlideButton.addEventListener('click', prevSlide);
+        
+        slideIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Initialize the first slide
+        showSlide(0);
+        
+        // Gallery Modal Functionality
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const galleryModal = document.getElementById('gallery-modal');
+        const modalImage = document.getElementById('modal-image');
+        const closeModal = document.getElementById('close-modal');
+        const prevImage = document.getElementById('prev-image');
+        const nextImage = document.getElementById('next-image');
+        
+        let currentImageIndex = 0;
+        const galleryImages = Array.from(galleryItems).map(item => item.querySelector('img').src);
+        
+        function openModal(index) {
+            currentImageIndex = index;
+            modalImage.src = galleryImages[currentImageIndex];
+            galleryModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeGalleryModal() {
+            galleryModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            modalImage.src = galleryImages[currentImageIndex];
+        }
+        
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            modalImage.src = galleryImages[currentImageIndex];
+        }
+        
+        // Set up event listeners for gallery
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => openModal(index));
+        });
+        
+        closeModal.addEventListener('click', closeGalleryModal);
+        nextImage.addEventListener('click', showNextImage);
+        prevImage.addEventListener('click', showPrevImage);
+        
+        // Close modal when clicking outside the image
+        galleryModal.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
+                closeGalleryModal();
+            }
+        });
+        
+        // Keyboard navigation for gallery
+        document.addEventListener('keydown', (e) => {
+            if (!galleryModal.classList.contains('hidden')) {
+                if (e.key === 'Escape') {
+                    closeGalleryModal();
+                } else if (e.key === 'ArrowRight') {
+                    showNextImage();
+                } else if (e.key === 'ArrowLeft') {
+                    showPrevImage();
+                }
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show an alert
+            alert('Thank you for your message! We will contact you soon.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
